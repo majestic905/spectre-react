@@ -14,8 +14,8 @@ const propTypes = {
   large: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
-  iconWrapper: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  iconWrapper: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
@@ -71,10 +71,10 @@ const Input = ({ children, ...props }) => {
     iconLeft || iconRight
       ? (
         <Wrapper className={`has-icon-${iconPosition}`}>
-          { input }
-          { children }
+          {input}
+          {children}
         </Wrapper>
-      )
+        )
       : input
   )
 }

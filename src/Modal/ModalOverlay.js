@@ -18,7 +18,7 @@ const ModalOverlay = ({ children, ...props }) => {
 
   return (
     <Element aria-label='Close' {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

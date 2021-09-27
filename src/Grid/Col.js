@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-const media = [ 'xs', 'sm', 'md', 'lg', 'xl' ]
-const offsets = [ 'mx', 'ml', 'mr' ]
+const media = ['xs', 'sm', 'md', 'lg', 'xl']
+const offsets = ['mx', 'ml', 'mr']
 
 const propTypes = {
   children: PropTypes.node,
@@ -18,7 +18,7 @@ const propTypes = {
   hide: PropTypes.arrayOf(PropTypes.oneOf(media)),
   show: PropTypes.arrayOf(PropTypes.oneOf(media)),
   offset: PropTypes.oneOf(offsets),
-  renderAs: PropTypes.oneOfType([ PropTypes.func, PropTypes.string ])
+  renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
 const defaultProps = {

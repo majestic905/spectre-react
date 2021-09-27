@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Label from '../Label'
 
 const propTypes = {
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   children: PropTypes.node,
   label: PropTypes.string,
   className: PropTypes.string
@@ -24,7 +24,7 @@ const Heading = ({ children, ...props }) => {
 
   return (
     <Element {...attributes}>
-      { children }{ label && <Label renderAs='small'> { label }</Label> }
+      {children}{label && <Label renderAs='small'> {label}</Label>}
     </Element>
   )
 }

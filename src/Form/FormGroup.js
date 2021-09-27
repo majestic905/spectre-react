@@ -5,7 +5,7 @@ import classnames from 'classnames'
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
@@ -18,7 +18,7 @@ const FormGroup = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

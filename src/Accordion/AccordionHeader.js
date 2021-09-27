@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-const types = [ 'checkbox', 'radio' ]
+const types = ['checkbox', 'radio']
 
 const propTypes = {
   children: PropTypes.node,
@@ -30,7 +30,7 @@ const AccordionHeader = ({ children, ...props }) => {
 
   // has to use Fragment due to the way Spectre CSS works
   return (
-    <React.Fragment>
+    <>
       <input
         type={type}
         id={id}
@@ -42,9 +42,9 @@ const AccordionHeader = ({ children, ...props }) => {
         className={classNames}
         htmlFor={id}
       >
-        { children }
+        {children}
       </label>
-    </React.Fragment>
+    </>
   )
 }
 

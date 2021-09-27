@@ -7,7 +7,7 @@ const propTypes = {
   icon: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['2x', '3x', '4x']),
   formIcon: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {

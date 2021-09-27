@@ -84,7 +84,7 @@ class Tab extends Component {
         >
           {
             typeof content === 'string'
-              ? <a className='btn btn-link'>{ content }</a>
+              ? <a className='btn btn-link'>{content}</a>
               : content
           }
         </TabMenuItem>
@@ -96,10 +96,10 @@ class Tab extends Component {
     return (
       <Element {...attributes} className={classNames}>
         <TabMenu block={block}>
-          { menuItems }
+          {menuItems}
         </TabMenu>
 
-        { Pane && <Pane /> }
+        {Pane && <Pane />}
       </Element>
     )
   }

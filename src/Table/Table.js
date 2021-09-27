@@ -8,7 +8,7 @@ const propTypes = {
   striped: PropTypes.bool,
   hover: PropTypes.bool,
   scroll: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
@@ -41,7 +41,7 @@ const Table = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

@@ -7,7 +7,7 @@ const propTypes = {
   className: PropTypes.string,
   gapless: PropTypes.bool,
   oneline: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
@@ -38,7 +38,7 @@ const Row = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

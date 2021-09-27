@@ -6,7 +6,7 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-  renderAs: PropTypes.oneOfType([ PropTypes.func, PropTypes.string ])
+  renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
 const defaultProps = {
@@ -32,7 +32,7 @@ const Container = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

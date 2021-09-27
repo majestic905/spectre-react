@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import FigureCaption from './FigureCaption'
 
 // avatar sizes
-const sizes = [ 'xl', 'lg', 'sm', 'xs' ]
+const sizes = ['xl', 'lg', 'sm', 'xs']
 
 const propTypes = {
   children: PropTypes.node,
@@ -42,7 +42,7 @@ const Figure = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} data-initial={initials} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

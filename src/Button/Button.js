@@ -20,7 +20,7 @@ const propTypes = {
   primary: PropTypes.bool,
   small: PropTypes.bool,
   success: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([ PropTypes.func, PropTypes.string ])
+  renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
 const defaultProps = {
@@ -91,7 +91,7 @@ const Button = ({ children, ...props }) => {
       onClick={disabled ? undefined : onClick}
       className={classNames}
     >
-      { children }
+      {children}
     </Element>
   )
 }

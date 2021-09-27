@@ -39,15 +39,17 @@ const Code = ({ children, ...props }) => {
     Element = 'pre'
   }
 
-  return multi ? (
-    <Element {...attributes} className={classNames}>
-      <code lang={lang}>{children}</code>
-    </Element>
-  ) : (
-    <Element {...attributes} className={classNames} lang={lang}>
-      {children}
-    </Element>
-  )
+  return multi
+    ? (
+      <Element {...attributes} className={classNames}>
+        <code lang={lang}>{children}</code>
+      </Element>
+      )
+    : (
+      <Element {...attributes} className={classNames} lang={lang}>
+        {children}
+      </Element>
+      )
 }
 
 Code.propTypes = propTypes

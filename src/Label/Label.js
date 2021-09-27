@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-const colors = [ 'primary', 'secondary', 'success', 'warning', 'error' ]
+const colors = ['primary', 'secondary', 'success', 'warning', 'error']
 
 const propTypes = {
   children: PropTypes.node,
@@ -11,7 +11,7 @@ const propTypes = {
   rounded: PropTypes.bool,
   form: PropTypes.bool,
   htmlFor: PropTypes.string,
-  renderAs: PropTypes.oneOfType([ PropTypes.func, PropTypes.string ])
+  renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
 const defaultProps = {
@@ -38,7 +38,7 @@ const Label = ({ children, ...props }) => {
       [`label-${color}`]: color,
       'label-rounded': rounded,
       'form-label': form,
-      'label': !form
+      label: !form
     },
 
     className
@@ -56,7 +56,7 @@ const Label = ({ children, ...props }) => {
       className={classNames}
       htmlFor={htmlFor}
     >
-      { children }
+      {children}
     </Element>
   )
 }

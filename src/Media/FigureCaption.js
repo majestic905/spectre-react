@@ -25,7 +25,7 @@ const FigureCaption = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }

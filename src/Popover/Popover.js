@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import PopoverContainer from './PopoverContainer'
 
-const positions = [ 'right', 'bottom', 'left' ]
+const positions = ['right', 'bottom', 'left']
 
 const propTypes = {
   children: PropTypes.node,
@@ -29,7 +29,7 @@ const Popover = ({ children, ...props }) => {
 
   return (
     <Element {...attributes} className={classNames}>
-      { children }
+      {children}
     </Element>
   )
 }
