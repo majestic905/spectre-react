@@ -85,6 +85,9 @@ export ModalHeader from './Modal/ModalHeader'
 export ModalTitle from './Modal/ModalTitle'
 export ModalOverlay from './Modal/ModalOverlay'
 
+// Timeline
+export Timeline from './Timeline'
+
 // -------------------
 // Aliases / HOC
 // -------------------
