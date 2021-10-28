@@ -10,6 +10,7 @@ const propTypes = {
   inline: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
+  error: PropTypes.bool,
   indeterminate: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   iconWrapper: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
@@ -21,6 +22,7 @@ const defaultProps = {
   inline: false,
   large: false,
   small: false,
+  error: false,
   renderAs: 'input'
 }
 
@@ -44,13 +46,14 @@ class Checkbox extends Component {
     const {
       className,
       name,
-      switch: isSwitch,
-      inline,
-
-      small,
-      large,
       children,
       renderAs: Element,
+
+      switch: isSwitch,
+      inline,
+      small,
+      large,
+      error,
 
       ...attributes
     } = this.props
@@ -61,7 +64,8 @@ class Checkbox extends Component {
         'form-switch': isSwitch,
         'form-inline': inline,
         'input-sm': small,
-        'input-lg': large
+        'input-lg': large,
+        'is-error': error
       },
       className
     )
