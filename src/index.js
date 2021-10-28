@@ -56,6 +56,7 @@ export CardSubtitle from './Card/CardHeader/CardSubtitle'
 export Form from './Form'
 export FormGroup from './Form/FormGroup'
 export Input from './Form/Input'
+export InputHint from './Form/InputHint'
 export Checkbox from './Form/Checkbox'
 
 // Grid
