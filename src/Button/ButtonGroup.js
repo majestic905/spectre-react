@@ -14,8 +14,8 @@ const defaultProps = {
 }
 
 const ButtonGroup = ({ children, ...props }) => {
-  const { block, renderAs: Element, ...attributes } = props
-  const classNames = classnames('btn-group', { 'btn-group-block': block })
+  const { block, className, renderAs: Element, ...attributes } = props
+  const classNames = classnames('btn-group', { 'btn-group-block': block }, className)
 
   return (
     <Element {...attributes} className={classNames}>
