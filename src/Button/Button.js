@@ -69,7 +69,7 @@ const Button = ({ children, ...props }) => {
       'btn-sm': small,
       'btn-lg': large,
       'btn-action': action || circle,
-      circle: circle,
+      's-circle': circle,
       active: active,
       loading: loading,
       disabled: disabled
@@ -78,15 +78,12 @@ const Button = ({ children, ...props }) => {
     className
   )
 
-  let Element = renderAs
-
-  if (attributes.href && Element === 'button') {
-    Element = 'a'
-  }
+  const Element = (attributes.href) ? 'a' : renderAs;
+  const type = (Element === 'button' && onClick) ? 'button' : undefined
 
   return (
     <Element
-      type={(Element === 'button' && onClick) ? 'button' : undefined}
+      type={type}
       {...attributes}
       onClick={disabled ? undefined : onClick}
       className={classNames}
@@ -98,6 +95,7 @@ const Button = ({ children, ...props }) => {
 
 Button.propTypes = propTypes
 Button.defaultProps = defaultProps
+
 Button.Group = ButtonGroup
 
 export default Button
