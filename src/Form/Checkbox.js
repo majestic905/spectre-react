@@ -11,9 +11,10 @@ const propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   error: PropTypes.bool,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
   indeterminate: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  iconWrapper: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
