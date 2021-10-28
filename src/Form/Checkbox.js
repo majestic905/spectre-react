@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
   name: PropTypes.string,
-  label: PropTypes.string,
   switch: PropTypes.bool,
   inline: PropTypes.bool,
   small: PropTypes.bool,
@@ -17,7 +17,6 @@ const propTypes = {
 
 const defaultProps = {
   type: 'checkbox',
-  label: '',
   switch: false,
   inline: false,
   large: false,
@@ -45,10 +44,9 @@ class Checkbox extends Component {
     const {
       className,
       name,
-      label,
       switch: isSwitch,
       inline,
-      type,
+
       small,
       large,
       children,
@@ -77,7 +75,7 @@ class Checkbox extends Component {
           ref={this.inputRef}
         />
         <i className='form-icon' />
-        {label}
+        {children}
       </label>
     )
   }
