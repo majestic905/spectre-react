@@ -6,6 +6,7 @@ const propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
   label: PropTypes.string,
+  switch: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
   indeterminate: PropTypes.bool,
@@ -16,6 +17,7 @@ const propTypes = {
 const defaultProps = {
   type: 'checkbox',
   label: '',
+  switch: false,
   large: false,
   small: false,
   renderAs: 'input'
@@ -42,6 +44,7 @@ class Checkbox extends Component {
       className,
       name,
       label,
+      switch: isSwitch,
       type,
       small,
       large,
@@ -52,29 +55,27 @@ class Checkbox extends Component {
     } = this.props
 
     const classNames = classnames(
-      'form-checkbox',
       {
+        'form-checkbox': !isSwitch,
+        'form-switch': isSwitch,
         'input-sm': small,
         'input-lg': large
       },
       className
     )
 
-    const checkbox = (
+    return (
       <label className={classNames}>
         <Element
           {...attributes}
           name={name}
           type='checkbox'
-          className={classNames}
           ref={this.inputRef}
         />
         <i className='form-icon' />
         {label}
       </label>
     )
-
-    return checkbox
   }
 }
 
