@@ -57,6 +57,7 @@ export Form from './Form'
 export FormGroup from './Form/FormGroup'
 export Input from './Form/Input'
 export Checkbox from './Form/Checkbox'
+export Select from './Form/Select'
 
 // Grid
 export Grid from './Grid'
