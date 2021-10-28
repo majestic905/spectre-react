@@ -12,26 +12,38 @@ const propTypes = {
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   className: PropTypes.string,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool
 }
 
 const defaultProps = {
   renderAs: 'div',
-  active: false
+  active: false,
+  small: false,
+  large: false
 }
 
 const Modal = ({ children, ...props }) => {
   const {
     className,
     active,
+    small,
+    large,
     renderAs: Element,
 
     ...attributes
   } = props
 
+  if (small && large) { throw new Error('Modal: you should provide either `small` or `large`, but not both.') }
+
   const classNames = classnames(
     'modal',
-    { active },
+    {
+      active,
+      'modal-sm': small,
+      'modal-lg': large
+    },
     className
   )
 
