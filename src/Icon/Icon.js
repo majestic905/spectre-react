@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const propTypes = {
+  loading: PropTypes.bool,
   className: PropTypes.string,
   icon: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['2x', '3x', '4x']),
@@ -11,6 +12,7 @@ const propTypes = {
 }
 
 const defaultProps = {
+  loading: false,
   className: null,
   icon: null,
   size: null,
@@ -19,16 +21,17 @@ const defaultProps = {
 }
 
 const Icon = ({ children, ...props }) => {
-  const { className, formIcon, icon, size, renderAs: Element, ...attributes } = props
+  const { className, renderAs: Element, formIcon, icon, size, loading, ...attributes } = props
 
   const classNames = classnames(
-    'icon',
-    `icon-${icon}`,
-    className,
     {
+      icon: !!icon,
+      [`icon-${icon}`]: !!icon,
       [`icon-${size}`]: size,
-      'form-icon': formIcon
-    }
+      'form-icon': formIcon,
+      loading: loading
+    },
+    className
   )
 
   return (
