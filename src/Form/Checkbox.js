@@ -7,6 +7,7 @@ const propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   switch: PropTypes.bool,
+  inline: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
   indeterminate: PropTypes.bool,
@@ -18,6 +19,7 @@ const defaultProps = {
   type: 'checkbox',
   label: '',
   switch: false,
+  inline: false,
   large: false,
   small: false,
   renderAs: 'input'
@@ -45,6 +47,7 @@ class Checkbox extends Component {
       name,
       label,
       switch: isSwitch,
+      inline,
       type,
       small,
       large,
@@ -58,6 +61,7 @@ class Checkbox extends Component {
       {
         'form-checkbox': !isSwitch,
         'form-switch': isSwitch,
+        'form-inline': inline,
         'input-sm': small,
         'input-lg': large
       },
