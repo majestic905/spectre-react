@@ -5,16 +5,35 @@ import classnames from 'classnames'
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  success: PropTypes.bool,
+  error: PropTypes.bool,
 }
 
 const defaultProps = {
+  success: false,
+  error: false,
   renderAs: 'div'
 }
 
 const FormGroup = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
-  const classNames = classnames('form-group', className)
+  const {
+    className,
+    success,
+    error,
+    renderAs: Element,
+
+    ...attributes
+  } = props
+
+  const classNames = classnames(
+    'form-group',
+    {
+      'has-success': success,
+      'has-error': error
+    },
+    className
+  );
 
   return (
     <Element {...attributes} className={classNames}>
