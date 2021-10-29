@@ -12,7 +12,7 @@ const propTypes = {
 }
 
 const defaultProps = {
-  renderAs: 'div'
+  renderAs: 'details'
 }
 
 const Accordion = ({ children, ...props }) => {
