@@ -85,6 +85,12 @@ export ModalHeader from './Modal/ModalHeader'
 export ModalTitle from './Modal/ModalTitle'
 export ModalOverlay from './Modal/ModalOverlay'
 
+// Autocomplete
+export Autocomplete from './Autocomplete'
+export AutocompleteInput from './Autocomplete/AutocompleteInput'
+export AutocompleteMenu from './Autocomplete/AutocompleteMenu'
+export AutocompleteMenuItem from './Autocomplete/AutocompleteMenuItem'
+
 // -------------------
 // Aliases / HOC
 // -------------------
