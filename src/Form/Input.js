@@ -12,6 +12,8 @@ const propTypes = {
   placeholder: PropTypes.string,
   small: PropTypes.bool,
   large: PropTypes.bool,
+  error: PropTypes.bool,
+  success: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -22,6 +24,8 @@ const defaultProps = {
   type: 'text',
   large: false,
   small: false,
+  error: false,
+  success: false,
   iconLeft: false,
   iconRight: false,
   renderAs: 'input',
@@ -36,6 +40,8 @@ const Input = ({ children, ...props }) => {
     placeholder,
     small,
     large,
+    error,
+    success,
     iconRight,
     iconLeft,
     renderAs: Element,
@@ -49,7 +55,9 @@ const Input = ({ children, ...props }) => {
 
     {
       'input-sm': small,
-      'input-lg': large
+      'input-lg': large,
+      'is-error': error,
+      'is-success': success
     },
 
     className
