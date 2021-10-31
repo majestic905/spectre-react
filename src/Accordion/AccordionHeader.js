@@ -2,50 +2,61 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-const types = ['checkbox', 'radio']
+const types = ['checkbox', 'radio', 'summary']
 
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  id: PropTypes.string.isRequired,
   type: PropTypes.oneOf(types),
-  inputProps: PropTypes.object
+  inputProps: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })
 }
 
 const defaultProps = {
-  type: 'checkbox'
+  type: 'summary'
 }
 
 const AccordionHeader = ({ children, ...props }) => {
   const {
     className,
-    id,
     type,
     inputProps,
     renderAs: Element,
 
     ...attributes
   } = props
+
   const classNames = classnames('accordion-header', 'c-hand', className)
 
-  // has to use Fragment due to the way Spectre CSS works
-  return (
-    <>
-      <input
-        type={type}
-        id={id}
-        hidden
-        {...inputProps}
-      />
-      <label
-        {...attributes}
-        className={classNames}
-        htmlFor={id}
-      >
+  if (type !== 'summary' && (!inputProps || !inputProps.id)) {
+    throw new Error("Accordion: you must provide `id` inside `inputProps`")
+  }
+
+  if (type === 'summary')
+    return (
+      <summary {...attributes} className={classNames}>
         {children}
-      </label>
-    </>
-  )
+      </summary>
+    )
+  else
+    // has to use Fragment due to the way Spectre CSS works
+    return (
+      <React.Fragment>
+        <input
+          type={type}
+          hidden
+          {...inputProps}
+        />
+        <label
+          {...attributes}
+          className={classNames}
+          htmlFor={inputProps.id}
+        >
+          {children}
+        </label>
+      </React.Fragment>
+    )
 }
 
 AccordionHeader.propTypes = propTypes
