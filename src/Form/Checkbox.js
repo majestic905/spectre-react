@@ -3,21 +3,27 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 const propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
   name: PropTypes.string,
-  label: PropTypes.string,
+  switch: PropTypes.bool,
+  inline: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
+  error: PropTypes.bool,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
   indeterminate: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  iconWrapper: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 const defaultProps = {
   type: 'checkbox',
-  label: '',
+  switch: false,
+  inline: false,
   large: false,
   small: false,
+  error: false,
   renderAs: 'input'
 }
 
@@ -41,40 +47,42 @@ class Checkbox extends Component {
     const {
       className,
       name,
-      label,
-      type,
-      small,
-      large,
       children,
       renderAs: Element,
+
+      switch: isSwitch,
+      inline,
+      small,
+      large,
+      error,
 
       ...attributes
     } = this.props
 
     const classNames = classnames(
-      'form-checkbox',
       {
+        'form-checkbox': !isSwitch,
+        'form-switch': isSwitch,
+        'form-inline': inline,
         'input-sm': small,
-        'input-lg': large
+        'input-lg': large,
+        'is-error': error
       },
       className
     )
 
-    const checkbox = (
+    return (
       <label className={classNames}>
         <Element
           {...attributes}
           name={name}
           type='checkbox'
-          className={classNames}
           ref={this.inputRef}
         />
         <i className='form-icon' />
-        {label}
+        {children}
       </label>
     )
-
-    return checkbox
   }
 }
 
