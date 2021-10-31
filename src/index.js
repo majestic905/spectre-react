@@ -87,6 +87,10 @@ export ModalOverlay from './Modal/ModalOverlay'
 
 // Timeline
 export Timeline from './Timeline'
+export TimelineItem from './Timeline/TimelineItem'
+export TimelineLeft from './Timeline/TimelineLeft'
+export TimelineIcon from './Timeline/TimelineIcon'
+export TimelineContent from './Timeline/TimelineContent'
 
 // -------------------
 // Aliases / HOC
