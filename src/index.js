@@ -10,6 +10,7 @@ export Code from './Code'
 export Chip from './Chip'
 export Toast from './Toast'
 export Loading from './Loading';
+export Divider from './Divider';
 
 // -------------------
 // GROUPED COMPONENTS
