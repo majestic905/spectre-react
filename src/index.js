@@ -94,6 +94,12 @@ export ModalOverlay from './Modal/ModalOverlay'
 // Timeline
 export Timeline from './Timeline'
 
+// Autocomplete
+export Autocomplete from './Autocomplete'
+export AutocompleteInput from './Autocomplete/AutocompleteInput'
+export AutocompleteMenu from './Autocomplete/AutocompleteMenu'
+export AutocompleteMenuItem from './Autocomplete/AutocompleteMenuItem'
+
 // -------------------
 // Aliases / HOC
 // -------------------
