@@ -32,7 +32,7 @@ const defaultProps = {
   iconWrapper: 'div'
 }
 
-const Input = ({ children, ...props }) => {
+const Input = React.forwardRef(({ children, ...props }, ref) => {
   const {
     className,
     name,
@@ -66,6 +66,7 @@ const Input = ({ children, ...props }) => {
   const input = (
     <Element
       {...attributes}
+      ref={ref}
       name={name}
       type={type}
       placeholder={placeholder}
@@ -85,7 +86,7 @@ const Input = ({ children, ...props }) => {
         )
       : input
   )
-}
+});
 
 Input.propTypes = propTypes
 Input.defaultProps = defaultProps
