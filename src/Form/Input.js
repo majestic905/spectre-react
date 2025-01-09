@@ -14,6 +14,7 @@ const propTypes = {
   large: PropTypes.bool,
   error: PropTypes.bool,
   success: PropTypes.bool,
+    loading: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -26,6 +27,7 @@ const defaultProps = {
   small: false,
   error: false,
   success: false,
+    loading: false,
   iconLeft: false,
   iconRight: false,
   renderAs: 'input',
@@ -42,6 +44,7 @@ const Input = React.forwardRef(({ children, ...props }, ref) => {
     large,
     error,
     success,
+      loading,
     iconRight,
     iconLeft,
     renderAs: Element,
@@ -74,10 +77,20 @@ const Input = React.forwardRef(({ children, ...props }, ref) => {
     />
   )
 
-  const iconPosition = iconLeft ? 'left' : 'right'
+  let iconPosition;
+  if (iconLeft)
+      iconPosition = 'left';
+  else if (iconRight)
+      iconPosition = 'right';
+
+  if (loading) {
+      if (!iconPosition)
+          iconPosition = 'right';
+      children = <i className="form-icon loading"></i>
+  }
 
   return (
-    iconLeft || iconRight
+    iconPosition
       ? (
         <Wrapper className={`has-icon-${iconPosition}`}>
           {input}
