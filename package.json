@@ -2,7 +2,8 @@
   "name": "spectre-react",
   "version": "0.3.0",
   "description": "React components for Spectre.css",
-  "main": "dist",
+  "type": "module",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -38,38 +39,22 @@
   ],
   "author": "CodeDraken",
   "license": "MIT",
-  "peerDependencies": {
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.5",
-    "@babel/eslint-parser": "^7.15.7",
-    "@babel/plugin-proposal-export-default-from": "^7.14.5",
-    "@babel/preset-env": "^7.15.6",
-    "@babel/preset-react": "^7.14.5",
-    "@storybook/addon-console": "^1.2.3",
-    "@storybook/addon-essentials": "^6.3.8",
-    "@storybook/addon-knobs": "^6.3.1",
-    "@storybook/addon-links": "^6.3.8",
-    "@storybook/addon-storysource": "^6.3.8",
-    "@storybook/react": "^6.3.8",
-    "@storybook/storybook-deployer": "^2.8.10",
-    "babel-loader": "^8.2.2",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2",
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
+    "@babel/plugin-proposal-export-default-from": "^7.25.9",
     "jest": "^27.2.2",
     "jsdom": "^17.0.0",
-    "parcel-bundler": "^1.12.5",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "rimraf": "^3.0.2",
+    "parcel": "^2.13.3",
     "standard": "^16.0.3"
   },
   "dependencies": {
-    "classnames": "^2.3.1",
-    "prop-types": "^15.6.2"
-  }
+    "@swc/helpers": "^0.5.15",
+    "classnames": "^2.5.1",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": "> 0.5%, last 5 versions"
 }

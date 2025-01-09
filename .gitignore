@@ -5,6 +5,7 @@ node_modules
 .history
 npm-debug.log
 .cache
+.parcel-cache
 tmp.md
 
 # builds
