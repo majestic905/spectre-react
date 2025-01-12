@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const TileAction = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const TileAction = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('tile-action', className)
 
   return (
@@ -24,6 +19,5 @@ const TileAction = ({ children, ...props }) => {
 }
 
 TileAction.propTypes = propTypes
-TileAction.defaultProps = defaultProps
 
 export default TileAction

@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'p'
-}
-
-const TileSubtitle = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const TileSubtitle = ({ children, className, renderAs: Element = 'p', ...attributes }) => {
   const classNames = classnames('tile-subtitle', className)
 
   return (
@@ -24,6 +19,5 @@ const TileSubtitle = ({ children, ...props }) => {
 }
 
 TileSubtitle.propTypes = propTypes
-TileSubtitle.defaultProps = defaultProps
 
 export default TileSubtitle

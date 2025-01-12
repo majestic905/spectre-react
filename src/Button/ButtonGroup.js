@@ -9,13 +9,12 @@ const propTypes = {
   block: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ButtonGroup = ({ children, ...props }) => {
-  const { block, className, renderAs: Element, ...attributes } = props
-  const classNames = classnames('btn-group', { 'btn-group-block': block }, className)
+const ButtonGroup = ({ children, className, renderAs: Element = 'div', block = false, ...attributes }) => {
+  const classNames = classnames(
+    'btn-group',
+    { 'btn-group-block': block },
+    className
+  )
 
   return (
     <Element {...attributes} className={classNames}>
@@ -25,6 +24,5 @@ const ButtonGroup = ({ children, ...props }) => {
 }
 
 ButtonGroup.propTypes = propTypes
-ButtonGroup.defaultProps = defaultProps
 
 export default ButtonGroup

@@ -13,35 +13,15 @@ const propTypes = {
   onChange: PropTypes.func
 }
 
-const defaultProps = {
-  small: false,
-  large: false,
-  inline: false,
-  error: false
-}
-
-const Radio = ({ children, ...props }) => {
-  const {
-    small,
-    large,
-    inline,
-    error,
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Radio = ({ children, className, small = false, large = false, inline = false, error = false, ...attributes }) => {
   const classNames = classnames(
     'form-radio',
-
     {
       'input-sm': small,
       'input-lg': large,
       'form-inline': inline,
       'is-error': error
     },
-
     className
   )
 
@@ -58,6 +38,5 @@ const Radio = ({ children, ...props }) => {
 }
 
 Radio.propTypes = propTypes
-Radio.defaultProps = defaultProps
 
 export default Radio

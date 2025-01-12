@@ -9,12 +9,7 @@ const propTypes = {
   center: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-export const NavbarSection = ({ children, ...props }) => {
-  const { className, center, renderAs: Element, ...attributes } = props
+export const NavbarSection = ({ children, className, renderAs: Element = 'div', center = false, ...attributes }) => {
   const classNames = classnames(
     {
       'navbar-section': !center,
@@ -32,6 +27,5 @@ export const NavbarSection = ({ children, ...props }) => {
 }
 
 NavbarSection.propTypes = propTypes
-NavbarSection.defaultProps = defaultProps
 
 export default NavbarSection

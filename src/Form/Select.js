@@ -12,24 +12,7 @@ const propTypes = {
   children: PropTypes.node
 }
 
-const defaultProps = {
-  small: false,
-  large: false,
-  error: false,
-  success: false
-}
-
-const Select = ({ children, ...props }) => {
-  const {
-    small,
-    large,
-    error,
-    success,
-    className,
-
-    ...attributes
-  } = props
-
+const Select = ({ children, className, small = false, large = false, error = false, success = false, ...attributes }) => {
   const classNames = classnames(
     'form-select',
     {
@@ -49,6 +32,6 @@ const Select = ({ children, ...props }) => {
 }
 
 Select.propTypes = propTypes
-Select.defaultProps = defaultProps
+
 
 export default Select

@@ -9,14 +9,9 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const TimelineLeft = ({ children, ...props }) => {
+const TimelineLeft = ({ children, renderAs: Element = 'div', ...props }) => {
   const {
     className,
-    renderAs: Element,
 
     ...attributes
   } = props
@@ -34,7 +29,6 @@ const TimelineLeft = ({ children, ...props }) => {
 }
 
 TimelineLeft.propTypes = propTypes
-TimelineLeft.defaultProps = defaultProps
 
 TimelineLeft.Icon = TimelineIcon
 

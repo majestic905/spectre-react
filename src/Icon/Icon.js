@@ -11,17 +11,8 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  loading: false,
-  className: null,
-  icon: null,
-  size: null,
-  formIcon: false,
-  renderAs: 'i'
-}
-
-const Icon = ({ children, ...props }) => {
-  const { className, renderAs: Element, formIcon, icon, size, loading, ...attributes } = props
+const Icon = ({ children, className, renderAs: Element = 'i', ...props }) => {
+  const { formIcon = false, loading = false, icon, size, ...attributes } = props;
 
   const classNames = classnames(
     {
@@ -40,6 +31,5 @@ const Icon = ({ children, ...props }) => {
 }
 
 Icon.propTypes = propTypes
-Icon.defaultProps = defaultProps
 
 export default Icon

@@ -9,19 +9,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const Container = ({ children, ...props }) => {
-  const {
-    className,
-    size,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Container = ({ children, className, renderAs: Element = 'div', size, ...attributes }) => {
   const classNames = classnames(
     'container',
     className,
@@ -38,6 +26,6 @@ const Container = ({ children, ...props }) => {
 }
 
 Container.propTypes = propTypes
-Container.defaultProps = defaultProps
+
 
 export default Container

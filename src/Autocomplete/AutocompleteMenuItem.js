@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'li'
-}
-
-const AutocompleteMenuItem = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const AutocompleteMenuItem = ({ children, className, renderAs: Element = 'li', ...attributes }) => {
   const classNames = classnames('menu-item', className)
 
   return (
@@ -24,6 +19,5 @@ const AutocompleteMenuItem = ({ children, ...props }) => {
 }
 
 AutocompleteMenuItem.propTypes = propTypes
-AutocompleteMenuItem.defaultProps = defaultProps
 
 export default AutocompleteMenuItem

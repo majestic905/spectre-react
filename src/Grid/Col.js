@@ -21,32 +21,23 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
-const defaultProps = {
-  hide: [],
-  show: [],
-  renderAs: 'div'
-}
-
-const Col = ({ children, ...props }) => {
+const Col = ({ children, className, renderAs: Element = 'div', ...props }) => {
   const {
-    className,
     xs,
     sm,
     md,
     lg,
     xl,
     all,
-    hide,
-    show,
+    hide = [],
+    show = [],
     offset,
-    renderAs: Element,
 
     ...attributes
   } = props
 
   const classNames = classnames(
     'column',
-
     {
       [`col-${all}`]: all,
       [`col-xs-${xs}`]: xs,
@@ -57,11 +48,8 @@ const Col = ({ children, ...props }) => {
 
       [`col-${offset}-auto`]: offset
     },
-
     hide.map(media => `hide-${media}`),
-
     show.map(media => `show-${media}`),
-
     className
   )
 
@@ -73,6 +61,5 @@ const Col = ({ children, ...props }) => {
 }
 
 Col.propTypes = propTypes
-Col.defaultProps = defaultProps
 
 export default Col

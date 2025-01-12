@@ -15,13 +15,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  centered: false,
-  renderAs: 'div'
-}
-
-const Tile = ({ children, ...props }) => {
-  const { centered, className, renderAs: Element, ...attributes } = props
+const Tile = ({ children, className, renderAs: Element = 'div', centered = false, ...attributes }) => {
   const classNames = classnames('tile', { 'tile-centered': centered }, className)
 
   return (
@@ -32,7 +26,6 @@ const Tile = ({ children, ...props }) => {
 }
 
 Tile.propTypes = propTypes
-Tile.defaultProps = defaultProps
 
 Tile.Icon = TileIcon
 Tile.Content = TileContent

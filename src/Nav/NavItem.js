@@ -9,18 +9,10 @@ const propTypes = {
   active: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'li',
-  active: false
-}
-
-const NavItem = ({ children, ...props }) => {
-  const { className, active, renderAs: Element, ...attributes } = props
+const NavItem = ({ children, className, renderAs: Element = 'li', active = false, ...attributes }) => {
   const classNames = classnames(
     'nav-item',
-    {
-      active
-    },
+    { active },
     className
   )
 
@@ -32,6 +24,6 @@ const NavItem = ({ children, ...props }) => {
 }
 
 NavItem.propTypes = propTypes
-NavItem.defaultProps = defaultProps
+
 
 export default NavItem

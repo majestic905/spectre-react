@@ -8,12 +8,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  large: false,
-  renderAs: 'div'
-}
-
-const Loading = ({ className, large, renderAs: Element, ...attributes }) => {
+const Loading = ({ className, renderAs: Element = 'div', large = false, ...attributes }) => {
   const classNames = classnames(
     'loading',
     { 'loading-lg': large },
@@ -26,6 +21,5 @@ const Loading = ({ className, large, renderAs: Element, ...attributes }) => {
 }
 
 Loading.propTypes = propTypes
-Loading.defaultProps = defaultProps
 
 export default Loading

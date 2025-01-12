@@ -12,20 +12,7 @@ const propTypes = {
   children: PropTypes.node
 }
 
-const defaultProps = {
-  final: false,
-  renderAs: 'div'
-}
-
-const TimelineItem = ({ children, ...props }) => {
-  const {
-    final,
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const TimelineItem = ({ children, className, renderAs: Element = 'div', final = false, ...attributes }) => {
   const classNames = cx(
     'timeline-item',
     {
@@ -42,7 +29,6 @@ const TimelineItem = ({ children, ...props }) => {
 }
 
 TimelineItem.propTypes = propTypes
-TimelineItem.defaultProps = defaultProps
 
 TimelineItem.Left = TimelineLeft
 TimelineItem.Content = TimelineContent

@@ -10,30 +10,13 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
-const defaultProps = {
-  renderAs: 'code',
-  multi: false
-}
-
-const Code = ({ children, ...props }) => {
-  const {
-    className,
-    renderAs,
-    multi,
-    lang,
-
-    ...attributes
-  } = props
-
+const Code = ({ children, className, renderAs: Element = 'code', multi = false, lang, ...attributes }) => {
   const classNames = classnames(
     {
       code: multi
     },
-
     className
   )
-
-  let Element = renderAs
 
   if (multi && Element === 'code') {
     Element = 'pre'
@@ -53,6 +36,5 @@ const Code = ({ children, ...props }) => {
 }
 
 Code.propTypes = propTypes
-Code.defaultProps = defaultProps
 
 export default Code

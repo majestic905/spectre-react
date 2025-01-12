@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const PopoverContainer = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const PopoverContainer = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('popover-container', className)
 
   return (
@@ -24,6 +19,5 @@ const PopoverContainer = ({ children, ...props }) => {
 }
 
 PopoverContainer.propTypes = propTypes
-PopoverContainer.defaultProps = defaultProps
 
 export default PopoverContainer

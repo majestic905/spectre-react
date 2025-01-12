@@ -11,12 +11,7 @@ const propTypes = {
   away: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'i'
-}
-
-const AvatarStatus = ({ children, ...props }) => {
-  const { className, online, busy, away, renderAs: Element, ...attributes } = props
+const AvatarStatus = ({ children, className, renderAs: Element = 'i', online = false, busy = false, away = false, ...attributes }) => {
   const classNames = classnames(
     'avatar-presence',
     {
@@ -33,6 +28,5 @@ const AvatarStatus = ({ children, ...props }) => {
 }
 
 AvatarStatus.propTypes = propTypes
-AvatarStatus.defaultProps = defaultProps
 
 export default AvatarStatus

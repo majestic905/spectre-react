@@ -11,12 +11,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'nav'
-}
-
-export const Navbar = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+export const Navbar = ({ children, className, renderAs: Element = 'nav', ...attributes }) => {
   const classNames = classnames('navbar', className)
 
   return (
@@ -27,7 +22,7 @@ export const Navbar = ({ children, ...props }) => {
 }
 
 Navbar.propTypes = propTypes
-Navbar.defaultProps = defaultProps
+
 Navbar.Section = NavbarSection
 Navbar.Brand = NavbarBrand
 

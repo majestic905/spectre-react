@@ -11,18 +11,10 @@ const propTypes = {
   block: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'ul',
-  block: false
-}
-
-const TabMenu = ({ children, ...props }) => {
-  const { className, block, renderAs: Element, ...attributes } = props
+const TabMenu = ({ children, className, renderAs: Element = 'ul', block = false, ...attributes }) => {
   const classNames = classnames(
     'tab',
-    {
-      'tab-block': block
-    },
+    { 'tab-block': block },
     className
   )
 
@@ -34,7 +26,6 @@ const TabMenu = ({ children, ...props }) => {
 }
 
 TabMenu.propTypes = propTypes
-TabMenu.defaultProps = defaultProps
 TabMenu.Item = TabMenuItem
 
 export default TabMenu

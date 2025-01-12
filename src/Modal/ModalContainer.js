@@ -9,14 +9,7 @@ const propTypes = {
   fullHeight: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'div',
-  fullHeight: false
-}
-
-const ModalContainer = ({ children, ...props }) => {
-  const { className, renderAs: Element, fullHeight, ...attributes } = props
-
+const ModalContainer = ({ children, className, renderAs: Element = 'div', fullHeight = false, ...attributes }) => {
   const classNames = classnames('modal-container', { 'modal-fullheight': fullHeight }, className)
 
   return (
@@ -27,6 +20,6 @@ const ModalContainer = ({ children, ...props }) => {
 }
 
 ModalContainer.propTypes = propTypes
-ModalContainer.defaultProps = defaultProps
+
 
 export default ModalContainer

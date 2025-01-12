@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ModalOverlay = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const ModalOverlay = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('modal-overlay', className)
 
   return (
@@ -24,6 +19,6 @@ const ModalOverlay = ({ children, ...props }) => {
 }
 
 ModalOverlay.propTypes = propTypes
-ModalOverlay.defaultProps = defaultProps
+
 
 export default ModalOverlay

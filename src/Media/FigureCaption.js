@@ -9,12 +9,7 @@ const propTypes = {
   align: PropTypes.oneOf(['right', 'left', 'center'])
 }
 
-const defaultProps = {
-  renderAs: 'figcaption'
-}
-
-const FigureCaption = ({ children, ...props }) => {
-  const { className, align, renderAs: Element, ...attributes } = props
+const FigureCaption = ({ children, className, renderAs: Element = 'figcaption', align, ...attributes }) => {
   const classNames = classnames(
     'figure-caption',
     {
@@ -31,6 +26,6 @@ const FigureCaption = ({ children, ...props }) => {
 }
 
 FigureCaption.propTypes = propTypes
-FigureCaption.defaultProps = defaultProps
+
 
 export default FigureCaption

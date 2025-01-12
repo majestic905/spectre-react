@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const CardImage = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const CardImage = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card-image', className)
 
   return (
@@ -24,6 +19,5 @@ const CardImage = ({ children, ...props }) => {
 }
 
 CardImage.propTypes = propTypes
-CardImage.defaultProps = defaultProps
 
 export default CardImage

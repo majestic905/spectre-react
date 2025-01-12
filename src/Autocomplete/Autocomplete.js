@@ -12,20 +12,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  oneline: false,
-  renderAs: 'div'
-}
-
-const Autocomplete = ({ children, ...props }) => {
-  const {
-    oneline,
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Autocomplete = ({ children, className, renderAs: Element = 'div', oneline = false, ...attributes }) => {
   const classNames = classnames(
     'form-autocomplete',
     { 'autocomplete-oneline': oneline },
@@ -40,7 +27,6 @@ const Autocomplete = ({ children, ...props }) => {
 }
 
 Autocomplete.propTypes = propTypes
-Autocomplete.defaultProps = defaultProps
 
 Autocomplete.Input = AutocompleteInput
 Autocomplete.Menu = AutocompleteMenu

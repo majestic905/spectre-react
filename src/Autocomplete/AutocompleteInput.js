@@ -9,20 +9,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  focused: false,
-  renderAs: 'div'
-}
-
-const AutocompleteInput = ({ children, ...props }) => {
-  const {
-    focused,
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const AutocompleteInput = ({ children, className, renderAs: Element = 'div', focused = false, ...attributes }) => {
   const classNames = classnames(
     'form-autocomplete-input',
     'form-input',
@@ -38,6 +25,5 @@ const AutocompleteInput = ({ children, ...props }) => {
 }
 
 AutocompleteInput.propTypes = propTypes
-AutocompleteInput.defaultProps = defaultProps
 
 export default AutocompleteInput

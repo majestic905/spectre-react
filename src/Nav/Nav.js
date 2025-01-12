@@ -10,12 +10,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'ul'
-}
-
-const Nav = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const Nav = ({ children, className, renderAs: Element = 'ul', ...attributes }) => {
   const classNames = classnames('nav', className)
 
   return (
@@ -26,7 +21,7 @@ const Nav = ({ children, ...props }) => {
 }
 
 Nav.propTypes = propTypes
-Nav.defaultProps = defaultProps
+
 Nav.Item = NavItem
 
 export default Nav

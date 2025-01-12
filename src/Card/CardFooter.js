@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const CardFooter = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const CardFooter = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card-footer', className)
 
   return (
@@ -24,6 +19,5 @@ const CardFooter = ({ children, ...props }) => {
 }
 
 CardFooter.propTypes = propTypes
-CardFooter.defaultProps = defaultProps
 
 export default CardFooter

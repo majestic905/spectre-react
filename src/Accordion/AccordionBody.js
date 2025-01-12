@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const AccordionBody = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const AccordionBody = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('accordion-body', className)
 
   return (
@@ -24,6 +19,6 @@ const AccordionBody = ({ children, ...props }) => {
 }
 
 AccordionBody.propTypes = propTypes
-AccordionBody.defaultProps = defaultProps
+
 
 export default AccordionBody

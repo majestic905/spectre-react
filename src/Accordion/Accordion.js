@@ -11,12 +11,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'details'
-}
-
-const Accordion = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const Accordion = ({ children, className, renderAs: Element = 'details', ...attributes }) => {
   const classNames = classnames('accordion', className)
 
   return (
@@ -27,7 +22,6 @@ const Accordion = ({ children, ...props }) => {
 }
 
 Accordion.propTypes = propTypes
-Accordion.defaultProps = defaultProps
 
 Accordion.Body = AccordionBody
 Accordion.Header = AccordionHeader

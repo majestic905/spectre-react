@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ModalTitle = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const ModalTitle = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('modal-title', className)
 
   return (
@@ -24,6 +19,6 @@ const ModalTitle = ({ children, ...props }) => {
 }
 
 ModalTitle.propTypes = propTypes
-ModalTitle.defaultProps = defaultProps
+
 
 export default ModalTitle

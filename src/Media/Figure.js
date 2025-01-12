@@ -16,21 +16,7 @@ const propTypes = {
   size: PropTypes.oneOf(sizes)
 }
 
-const defaultProps = {
-  renderAs: 'figure'
-}
-
-const Figure = ({ children, ...props }) => {
-  const {
-    className,
-    avatar,
-    initials,
-    size,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Figure = ({ children, className, renderAs: Element = 'figure', avatar = false, initials, size, ...attributes }) => {
   const classNames = classnames(
     'figure',
     {
@@ -48,7 +34,7 @@ const Figure = ({ children, ...props }) => {
 }
 
 Figure.propTypes = propTypes
-Figure.defaultProps = defaultProps
+
 Figure.Caption = FigureCaption
 
 export default Figure

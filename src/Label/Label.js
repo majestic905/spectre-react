@@ -16,14 +16,6 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
-const defaultProps = {
-  renderAs: 'span',
-  rounded: false,
-  form: false,
-  small: false,
-  large: false
-}
-
 /**
  * @example
  * <Label form>...</Label>
@@ -34,16 +26,12 @@ const defaultProps = {
  * @example
  * <Label primary rounded>...</Label>
  */
-const Label = ({ children, ...props }) => {
+const Label = ({ children, className, renderAs: Element = 'span', htmlFor, color, ...props }) => {
   const {
-    color,
-    rounded,
-    small,
-    large,
-    className,
-    renderAs,
-    htmlFor,
-    form,
+    rounded = false,
+    small = false,
+    large = false,
+    form = false,
 
     ...attributes
   } = props
@@ -62,8 +50,6 @@ const Label = ({ children, ...props }) => {
     className
   )
 
-  let Element = renderAs
-
   if (htmlFor && Element === 'span') {
     Element = 'label'
   }
@@ -80,6 +66,6 @@ const Label = ({ children, ...props }) => {
 }
 
 Label.propTypes = propTypes
-Label.defaultProps = defaultProps
+
 
 export default Label

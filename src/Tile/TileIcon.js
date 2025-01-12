@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const TileIcon = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const TileIcon = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('tile-icon', className)
 
   return (
@@ -24,6 +19,5 @@ const TileIcon = ({ children, ...props }) => {
 }
 
 TileIcon.propTypes = propTypes
-TileIcon.defaultProps = defaultProps
 
 export default TileIcon

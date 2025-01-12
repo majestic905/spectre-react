@@ -10,22 +10,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  gapless: false,
-  oneline: false,
-  renderAs: 'div'
-}
-
-const Row = ({ children, ...props }) => {
-  const {
-    className,
-    gapless,
-    oneline,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Row = ({ children, className, renderAs: Element = 'div', gapless = false, oneline = false, ...attributes }) => {
   const classNames = classnames(
     'columns',
     {
@@ -44,6 +29,6 @@ const Row = ({ children, ...props }) => {
 }
 
 Row.propTypes = propTypes
-Row.defaultProps = defaultProps
+
 
 export default Row

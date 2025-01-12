@@ -9,23 +9,16 @@ const propTypes = {
   href: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'a',
-  href: '#'
-}
-
-export const NavbarBrand = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+export const NavbarBrand = ({ children, className, renderAs: Element = 'a', href = '#', ...attributes }) => {
   const classNames = classnames('navbar-brand', className)
 
   return (
-    <Element {...attributes} className={classNames}>
+    <Element href={href} {...attributes} className={classNames}>
       {children}
     </Element>
   )
 }
 
 NavbarBrand.propTypes = propTypes
-NavbarBrand.defaultProps = defaultProps
 
 export default NavbarBrand

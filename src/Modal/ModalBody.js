@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ModalBody = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const ModalBody = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('modal-body', className)
 
   return (
@@ -24,6 +19,5 @@ const ModalBody = ({ children, ...props }) => {
 }
 
 ModalBody.propTypes = propTypes
-ModalBody.defaultProps = defaultProps
 
 export default ModalBody

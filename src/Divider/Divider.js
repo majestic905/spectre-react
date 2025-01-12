@@ -6,30 +6,15 @@ const propTypes = {
   className: PropTypes.string,
   vertical: PropTypes.bool,
   text: PropTypes.string,
-  textPosition: PropTypes.string
+  textPosition: PropTypes.oneOf(['left', 'center', 'right']),
 }
 
-const defaultProps = {
-  vertical: false,
-  text: undefined,
-  textPosition: 'center'
-}
-
-const Divider = (props) => {
-  const {
-    className,
-    vertical,
-    text,
-    textPosition,
-
-    ...attributes
-  } = props
-
+const Divider = ({ className, vertical = false, text, textPosition = 'center', ...attributes}) => {
   const classNames = classnames(
     {
       divider: !vertical,
       'divider-vert': vertical,
-      [`text-${textPosition}`]: !!text && !vertical
+      [`text-${textPosition}`]: !!text && !!textPosition && !vertical
     },
     className
   )
@@ -40,6 +25,5 @@ const Divider = (props) => {
 }
 
 Divider.propTypes = propTypes
-Divider.defaultProps = defaultProps
 
 export default Divider

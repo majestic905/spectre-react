@@ -23,36 +23,29 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 }
 
-const defaultProps = {
-  renderAs: 'button'
-  // onClick: () => null
-}
-
-const Button = ({ children, ...props }) => {
+const Button = ({ children, className, renderAs: Element = 'button', ...props }) => {
   const {
-    className,
     onClick,
-    renderAs,
 
     // styles
-    primary,
-    link,
+    primary = false,
+    link = false,
 
     // colors
-    success,
-    error,
+    success = false,
+    error = false,
 
     // sizes
-    block,
-    small,
-    large,
-    action,
-    circle,
+    block = false,
+    small = false,
+    large = false,
+    action = false,
+    circle = false,
 
     // states
-    active,
-    loading,
-    disabled,
+    active = false,
+    loading = false,
+    disabled = false,
 
     ...attributes
   } = props
@@ -78,7 +71,9 @@ const Button = ({ children, ...props }) => {
     className
   )
 
-  const Element = (attributes.href) ? 'a' : renderAs;
+  if (attributes.href)
+    Element = 'a'
+
   const type = (Element === 'button' && onClick) ? 'button' : undefined
 
   return (
@@ -94,7 +89,6 @@ const Button = ({ children, ...props }) => {
 }
 
 Button.propTypes = propTypes
-Button.defaultProps = defaultProps
 
 Button.Group = ButtonGroup
 

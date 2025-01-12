@@ -4,6 +4,11 @@
   "description": "React components for Spectre.css",
   "type": "module",
   "main": "dist/index.js",
+  "targets": {
+      "main": {
+          "optimize": true
+      }
+  },
   "files": [
     "dist"
   ],

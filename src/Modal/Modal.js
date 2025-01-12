@@ -17,24 +17,7 @@ const propTypes = {
   large: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'div',
-  active: false,
-  small: false,
-  large: false
-}
-
-const Modal = ({ children, ...props }) => {
-  const {
-    className,
-    active,
-    small,
-    large,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Modal = ({ children, className, renderAs: Element = 'div', active = false, small = false, large = false, ...attributes }) => {
   if (small && large) { throw new Error('Modal: you should provide either `small` or `large`, but not both.') }
 
   const classNames = classnames(
@@ -55,7 +38,6 @@ const Modal = ({ children, ...props }) => {
 }
 
 Modal.propTypes = propTypes
-Modal.defaultProps = defaultProps
 
 Modal.Container = ModalContainer
 Modal.Header = ModalHeader

@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ModalFooter = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const ModalFooter = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('modal-footer', className)
 
   return (
@@ -24,6 +19,6 @@ const ModalFooter = ({ children, ...props }) => {
 }
 
 ModalFooter.propTypes = propTypes
-ModalFooter.defaultProps = defaultProps
+
 
 export default ModalFooter

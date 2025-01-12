@@ -8,18 +8,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  renderAs: 'p'
-}
-
-const InputHint = ({ children, ...props }) => {
-  const {
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const InputHint = ({ children, className, renderAs: Element = 'p', ...attributes }) => {
   const classNames = classnames(
     'form-input-hint',
     className
@@ -33,6 +22,5 @@ const InputHint = ({ children, ...props }) => {
 }
 
 InputHint.propTypes = propTypes
-InputHint.defaultProps = defaultProps
 
 export default InputHint

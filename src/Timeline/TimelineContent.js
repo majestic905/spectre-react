@@ -7,18 +7,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const TimelineContent = ({ children, ...props }) => {
-  const {
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const TimelineContent = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames(
     'timeline-content',
     className
@@ -32,6 +21,5 @@ const TimelineContent = ({ children, ...props }) => {
 }
 
 TimelineContent.propTypes = propTypes
-TimelineContent.defaultProps = defaultProps
 
 export default TimelineContent

@@ -13,20 +13,7 @@ const propTypes = {
   })
 }
 
-const defaultProps = {
-  type: 'summary'
-}
-
-const AccordionHeader = ({ children, ...props }) => {
-  const {
-    className,
-    type,
-    inputProps,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const AccordionHeader = ({ children, className, type = 'summary', inputProps, ...attributes }) => {
   const classNames = classnames('accordion-header', 'c-hand', className)
 
   if (type !== 'summary' && (!inputProps || !inputProps.id)) {
@@ -60,6 +47,5 @@ const AccordionHeader = ({ children, ...props }) => {
 }
 
 AccordionHeader.propTypes = propTypes
-AccordionHeader.defaultProps = defaultProps
 
 export default AccordionHeader

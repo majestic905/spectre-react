@@ -14,44 +14,31 @@ const propTypes = {
   large: PropTypes.bool,
   error: PropTypes.bool,
   success: PropTypes.bool,
-    loading: PropTypes.bool,
+  loading: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   iconWrapper: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  type: 'text',
-  large: false,
-  small: false,
-  error: false,
-  success: false,
-    loading: false,
-  iconLeft: false,
-  iconRight: false,
-  renderAs: 'input',
-  iconWrapper: 'div'
-}
-
 const Input = React.forwardRef(({ children, ...props }, ref) => {
   const {
     className,
     name,
-    type,
+    type = 'text',
     placeholder,
-    small,
-    large,
-    error,
-    success,
-      loading,
-    iconRight,
-    iconLeft,
-    renderAs: Element,
-    iconWrapper: Wrapper,
+    small = false,
+    large = false,
+    error = false,
+    success = false,
+    loading = false,
+    iconRight = false,
+    iconLeft = false,
+    renderAs: Element = 'input',
+    iconWrapper: Wrapper = 'div',
 
     ...attributes
-  } = props
+  } = props;
 
   const classNames = classnames(
     'form-input',
@@ -86,6 +73,7 @@ const Input = React.forwardRef(({ children, ...props }, ref) => {
   if (loading) {
       if (!iconPosition)
           iconPosition = 'right';
+
       children = <i className="form-icon loading"></i>
   }
 
@@ -102,6 +90,5 @@ const Input = React.forwardRef(({ children, ...props }, ref) => {
 });
 
 Input.propTypes = propTypes
-Input.defaultProps = defaultProps
 
 export default Input

@@ -10,22 +10,7 @@ const propTypes = {
   error: PropTypes.bool,
 }
 
-const defaultProps = {
-  success: false,
-  error: false,
-  renderAs: 'div'
-}
-
-const FormGroup = ({ children, ...props }) => {
-  const {
-    className,
-    success,
-    error,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const FormGroup = ({ children, className, renderAs: Element = 'div', success = false, error = false, ...attributes }) => {
   const classNames = classnames(
     'form-group',
     {
@@ -43,6 +28,5 @@ const FormGroup = ({ children, ...props }) => {
 }
 
 FormGroup.propTypes = propTypes
-FormGroup.defaultProps = defaultProps
 
 export default FormGroup

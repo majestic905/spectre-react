@@ -10,20 +10,7 @@ const propTypes = {
   ratio: PropTypes.oneOf(['4:3', '1:1', '16:9'])
 }
 
-const defaultProps = {
-  renderAs: 'video'
-}
-
-const Video = ({ children, ...props }) => {
-  const {
-    className,
-    responsive,
-    ratio,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Video = ({ children, className, renderAs: Element = 'video', responsive = false, ratio, ...attributes }) => {
   const classNames = classnames(
     {
       'video-responsive': responsive || ratio,
@@ -41,6 +28,6 @@ const Video = ({ children, ...props }) => {
 }
 
 Video.propTypes = propTypes
-Video.defaultProps = defaultProps
+
 
 export default Video

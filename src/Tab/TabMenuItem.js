@@ -10,22 +10,7 @@ const propTypes = {
   action: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'li',
-  active: false,
-  action: false
-}
-
-const TabMenuItem = ({ children, ...props }) => {
-  const {
-    className,
-    active,
-    action,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const TabMenuItem = ({ children, className, renderAs: Element = 'li', active = false, action = false, ...attributes }) => {
   const classNames = classnames(
     'tab-item',
     {
@@ -43,6 +28,5 @@ const TabMenuItem = ({ children, ...props }) => {
 }
 
 TabMenuItem.propTypes = propTypes
-TabMenuItem.defaultProps = defaultProps
 
 export default TabMenuItem

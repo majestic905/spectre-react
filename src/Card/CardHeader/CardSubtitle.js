@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const CardSubtitle = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const CardSubtitle = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card-subtitle', className)
 
   return (
@@ -24,6 +19,5 @@ const CardSubtitle = ({ children, ...props }) => {
 }
 
 CardSubtitle.propTypes = propTypes
-CardSubtitle.defaultProps = defaultProps
 
 export default CardSubtitle

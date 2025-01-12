@@ -10,18 +10,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'h1'
-}
-
-const Heading = ({ children, ...props }) => {
-  const {
-    renderAs: Element,
-    label,
-
-    ...attributes
-  } = props
-
+const Heading = ({ children, renderAs: Element = 'h1', label, ...attributes }) => {
   return (
     <Element {...attributes}>
       {children}{label && <Label renderAs='small'> {label}</Label>}
@@ -30,6 +19,5 @@ const Heading = ({ children, ...props }) => {
 }
 
 Heading.propTypes = propTypes
-Heading.defaultProps = defaultProps
 
 export default Heading

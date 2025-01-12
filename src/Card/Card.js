@@ -13,12 +13,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const Card = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const Card = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card', className)
 
   return (
@@ -29,7 +24,6 @@ const Card = ({ children, ...props }) => {
 }
 
 Card.propTypes = propTypes
-Card.defaultProps = defaultProps
 
 Card.Body = CardBody
 Card.Footer = CardFooter

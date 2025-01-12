@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'span'
-}
-
-const Chip = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const Chip = ({ children, className, renderAs: Element = 'span', ...attributes }) => {
   const classNames = classnames('chip', className)
 
   return (
@@ -24,6 +19,5 @@ const Chip = ({ children, ...props }) => {
 }
 
 Chip.propTypes = propTypes
-Chip.defaultProps = defaultProps
 
 export default Chip

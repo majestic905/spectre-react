@@ -11,24 +11,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  striped: false,
-  hover: false,
-  scroll: false,
-  renderAs: 'table'
-}
-
-const Table = ({ children, ...props }) => {
-  const {
-    className,
-    striped,
-    hover,
-    scroll,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Table = ({ children, className, renderAs: Element = 'table', striped = false, hover = false, scroll = false, ...attributes }) => {
   const classNames = classnames(
     'table',
     className,
@@ -47,6 +30,5 @@ const Table = ({ children, ...props }) => {
 }
 
 Table.propTypes = propTypes
-Table.defaultProps = defaultProps
 
 export default Table

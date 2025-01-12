@@ -13,12 +13,7 @@ const propTypes = {
   position: PropTypes.oneOf(positions)
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const Popover = ({ children, ...props }) => {
-  const { className, position, renderAs: Element, ...attributes } = props
+const Popover = ({ children, className, renderAs: Element = 'div', position, ...attributes }) => {
   const classNames = classnames(
     'popover',
     {
@@ -35,7 +30,6 @@ const Popover = ({ children, ...props }) => {
 }
 
 Popover.propTypes = propTypes
-Popover.defaultProps = defaultProps
 
 Popover.Container = PopoverContainer
 

@@ -8,19 +8,7 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  renderAs: 'span'
-}
-
-const TimelineIcon = ({ children, ...props }) => {
-  const {
-    bg,
-    className,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const TimelineIcon = ({ children, className, renderAs: Element = 'span', bg, ...attributes }) => {
   const classNames = classnames(
     'timeline-icon',
     {
@@ -38,6 +26,5 @@ const TimelineIcon = ({ children, ...props }) => {
 }
 
 TimelineIcon.propTypes = propTypes
-TimelineIcon.defaultProps = defaultProps
 
 export default TimelineIcon

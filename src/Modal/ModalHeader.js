@@ -10,12 +10,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const ModalHeader = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const ModalHeader = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('modal-header', className)
 
   return (
@@ -26,7 +21,6 @@ const ModalHeader = ({ children, ...props }) => {
 }
 
 ModalHeader.propTypes = propTypes
-ModalHeader.defaultProps = defaultProps
 
 ModalHeader.Title = ModalTitle
 

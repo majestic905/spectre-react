@@ -11,12 +11,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const CardHeader = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const CardHeader = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card-header', className)
 
   return (
@@ -27,7 +22,6 @@ const CardHeader = ({ children, ...props }) => {
 }
 
 CardHeader.propTypes = propTypes
-CardHeader.defaultProps = defaultProps
 
 CardHeader.Title = CardTitle
 CardHeader.SubTitle = CardSubtitle

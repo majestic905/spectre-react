@@ -11,18 +11,13 @@ const propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const Toast = ({ children, ...props }) => {
+const Toast = ({ children, renderAs: Element = 'div', ...props }) => {
   const {
     className,
     primary,
     success,
     warning,
     error,
-    renderAs: Element,
 
     ...attributes
   } = props
@@ -46,6 +41,5 @@ const Toast = ({ children, ...props }) => {
 }
 
 Toast.propTypes = propTypes
-Toast.defaultProps = defaultProps
 
 export default Toast

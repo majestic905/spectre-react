@@ -11,21 +11,7 @@ const propTypes = {
   cover: PropTypes.bool
 }
 
-const defaultProps = {
-  renderAs: 'img'
-}
-
-const Image = ({ children, ...props }) => {
-  const {
-    className,
-    responsive,
-    contain,
-    cover,
-    renderAs: Element,
-
-    ...attributes
-  } = props
-
+const Image = ({ children, className, renderAs: Element = 'img', responsive = false, contain = false, cover = false, ...attributes }) => {
   const classNames = classnames(
     {
       'img-responsive': responsive,
@@ -41,6 +27,6 @@ const Image = ({ children, ...props }) => {
 }
 
 Image.propTypes = propTypes
-Image.defaultProps = defaultProps
+
 
 export default Image

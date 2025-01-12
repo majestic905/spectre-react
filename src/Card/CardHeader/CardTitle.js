@@ -8,12 +8,7 @@ const propTypes = {
   className: PropTypes.string
 }
 
-const defaultProps = {
-  renderAs: 'div'
-}
-
-const CardTitle = ({ children, ...props }) => {
-  const { className, renderAs: Element, ...attributes } = props
+const CardTitle = ({ children, className, renderAs: Element = 'div', ...attributes }) => {
   const classNames = classnames('card-title', className)
 
   return (
@@ -24,6 +19,5 @@ const CardTitle = ({ children, ...props }) => {
 }
 
 CardTitle.propTypes = propTypes
-CardTitle.defaultProps = defaultProps
 
 export default CardTitle
