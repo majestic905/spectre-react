@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -27,7 +27,7 @@ const defaultProps = {
   renderAs: 'input'
 }
 
-class Checkbox extends Component {
+class Checkbox extends React.Component {
   constructor (props) {
     super(props)
     this.inputRef = React.createRef()
